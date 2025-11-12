@@ -1,0 +1,56 @@
+## Sentiment Classification with RNN Architectures
+
+This project implements and evaluates multiple Recurrent Neural Network (RNN) architectures for sentiment classification on the IMDB Movie Review Dataset. The goal is to categorize the emotional tone of movie reviews as positive or negative.
+
+### Project Structure
+- `src/preprocess.py`: Preprocesses the IMDB dataset, builds vocabulary, and saves processed data.
+- `src/models.py`: Defines flexible RNN, LSTM, and Bidirectional LSTM architectures with configurable activation functions.
+- `src/train.py`: Runs experiments, trains models, and logs results.
+- `src/evaluate.py`: Computes accuracy, F1-score, and generates plots.
+- `src/utils.py`: Utility functions (e.g., seed setting).
+- `data/raw_data/`: Contains the raw IMDB dataset CSV.
+- `data/pre_processed_data/`: Contains processed train/test CSVs for different sequence lengths.
+- `results/plots/`: Stores generated plots.
+- `results/experiment_results.csv`: Stores experiment results.
+
+### Setup
+1. Clone the repository and set up a Python 3.8+ environment.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Download the IMDB dataset and place it in `data/raw_data/IMDB Dataset.csv`.
+4. Run preprocessing:
+   ```bash
+   python src/preprocess.py
+   ```
+5. Run experiments:
+   ```bash
+   python src/train.py
+   ```
+
+### Experiments
+- Architectures: RNN, LSTM, Bidirectional LSTM
+- Activation Functions: Sigmoid, ReLU, Tanh
+- Optimizers: Adam, SGD, RMSProp
+- Sequence Lengths: 25, 50, 100
+- Stability Strategies: No clipping, Gradient clipping
+- Metrics: Accuracy, Macro F1-score, Training loss, Training time
+
+### Results
+- Results and plots are saved in the `results/` folder.
+
+### Reproducibility
+Random seeds are set for PyTorch, NumPy, and Python's random module for reproducibility.
+
+## Expected Runtime
+
+- Training each experiment (5 epochs) may take from a few seconds to several minutes, depending on sequence length and model type.
+- For running the complete experiments it took around 90 minutes in total.
+
+## Output Files
+
+- `results/experiment_results.csv`: Contains summary of all experiments (accuracy, F1, loss, etc.).
+- `results/plots/acc_f1_vs_seq_len.png`: Accuracy and F1-score vs. sequence length plot.
+- `results/plots/loss_vs_epochs_best.png`: Training loss vs. epochs for best model.
+- `results/plots/loss_vs_epochs_worst.png`: Training loss vs. epochs for worst model.
