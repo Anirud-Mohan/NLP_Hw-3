@@ -1,0 +1,13 @@
+# Python virtual environment
+.venv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data folders (raw and preprocessed datasets)
+data/raw_data/
+data/pre_processed_data/
+
+# Jupyter notebook checkpoints (if any)
+.ipynb_checkpoints/
